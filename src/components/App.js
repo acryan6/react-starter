@@ -14,21 +14,24 @@ class App extends React.Component {
     };
   }
 
-  // handleInputChange = (e) => {
-  //   this.setState({
-  //     searchInput: e.target.value
-  //   }, () => {
-  //     this.filterArray();
-  //   })
-  // }
+  handleInputChange(e) {
+    this.setState({
+      searchInput: e
+    }, () => {
+      console.log(e)
+    });
+  };
+
+  handleSubmit(e) {
+    this.preventDefault;
+  }
 
   render(){
     return(
       <div>
-        <form>
-    <input type="text" placeholder="Looking for a movie...?"/>
-    <button type="submit">Search</button>
-  </form>
+        <div>
+          <SearchBar inputChange={this.handleInputChange.bind(this)}/>
+        </div>
         <div>
           <MovieList movies={movies}/>
         </div>
