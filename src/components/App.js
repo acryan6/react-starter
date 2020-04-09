@@ -1,7 +1,8 @@
 import React from 'react';
 import MovieList from './MovieList.js';
-// import MovieItem from './MovieItem.js';
-import './../main.css';
+import SearchBar from './SearchBar.js';
+// import './../main.css';
+
 
 class App extends React.Component {
 
@@ -9,20 +10,32 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-
+      searchInput : ''
     };
-
   }
+
+  // handleInputChange = (e) => {
+  //   this.setState({
+  //     searchInput: e.target.value
+  //   }, () => {
+  //     this.filterArray();
+  //   })
+  // }
 
   render(){
     return(
-      // <div>
-      //   <input type="text" placeholder="Looking for a movie...?">
-      // </div>
       <div>
-        <MovieList movies={movies}/>
+        <form>
+    <input type="text" placeholder="Looking for a movie...?"/>
+    <button type="submit">Search</button>
+  </form>
+        <div>
+          <MovieList movies={movies}/>
+        </div>
       </div>
-  )}
+    );
+  }
+
 };
 
 const movies = [
